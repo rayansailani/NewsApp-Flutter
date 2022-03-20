@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/screens/HomeScreen.dart';
 
 void main() {
   runApp(MyApplication());
@@ -9,12 +10,7 @@ class MyApplication extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("GDSC UVCE News App"),
-        ),
-        body: Text("Hello world!"),
-      ),
+      home: HomeScreen(),
     );
   }
 }
