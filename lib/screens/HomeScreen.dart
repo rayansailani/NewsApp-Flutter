@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:newsapp/widgets/NewsTile.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -49,7 +51,16 @@ class _HomeScreenState extends State<HomeScreen> {
             "Latest News from All Over the World!",
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-          )
+          ),
+          NewsTile(
+              title:
+                  "Julia Fox Backtracks on Her Comment Kanye Wouldn't Hurt a Fly - TMZ",
+              description:
+                  "Julia Fox is doing a moonwalk after she told TMZ her ex, Kanye West, wouldn't hurt a fly.",
+              imgUrl:
+                  "https://imagez.tmz.com/image/36/16by9/2022/03/20/360885701cd64de3810dac44768f1cdd_xl.jpg",
+              articleUrl:
+                  "https://imagez.tmz.com/image/36/16by9/2022/03/20/360885701cd64de3810dac44768f1cdd_xl.jpg")
         ],
       ),
     );
