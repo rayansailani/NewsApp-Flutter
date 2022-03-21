@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/screens/ArticleDetail.dart';
 
 class NewsTile extends StatelessWidget {
   final String title;
@@ -37,7 +38,17 @@ class NewsTile extends StatelessWidget {
           )),
           onTap: () {
             // Adding navigation in the future
-            print("card Clicked");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ArticleDetail(
+                        title: this.title,
+                        articleUrl: this.articleUrl,
+                        imgUrl: this.imgUrl,
+                        content: this.content,
+                        description: this.description,
+                      )),
+            );
           },
         ),
       ),
