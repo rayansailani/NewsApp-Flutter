@@ -5,11 +5,13 @@ class NewsTile extends StatelessWidget {
   final String description;
   final String imgUrl;
   final String articleUrl;
+  final String content;
   NewsTile(
       {required this.title,
       required this.description,
       required this.imgUrl,
-      required this.articleUrl});
+      required this.articleUrl,
+      required this.content});
 
   @override
   Widget build(BuildContext context) {

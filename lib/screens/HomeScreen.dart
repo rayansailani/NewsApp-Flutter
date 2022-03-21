@@ -22,7 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
     var jsonData = jsonDecode(response.body);
     if (jsonData['status'] == 'ok') {
       jsonData['articles'].forEach((element) {
-        if (element['urlToImage'] != null && element['description'] != null) {
+        if (element['urlToImage'] != null &&
+            element['description'] != null &&
+            element['content'] != null) {
           articles.add(element);
         }
       });
@@ -42,26 +44,34 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("GDSC UVCE News App")),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            "Latest News from All Over the World!",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-          ),
-          NewsTile(
-              title:
-                  "Julia Fox Backtracks on Her Comment Kanye Wouldn't Hurt a Fly - TMZ",
-              description:
-                  "Julia Fox is doing a moonwalk after she told TMZ her ex, Kanye West, wouldn't hurt a fly.",
-              imgUrl:
-                  "https://imagez.tmz.com/image/36/16by9/2022/03/20/360885701cd64de3810dac44768f1cdd_xl.jpg",
-              articleUrl:
-                  "https://imagez.tmz.com/image/36/16by9/2022/03/20/360885701cd64de3810dac44768f1cdd_xl.jpg")
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Latest News from All Over the World!",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+            ListView.builder(
+              itemCount: articles.length,
+              shrinkWrap: true,
+              physics: ScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                    padding: const EdgeInsets.all(8.0),
+                    child: NewsTile(
+                        articleUrl: articles[index]['url'],
+                        title: articles[index]['title'],
+                        description: articles[index]['description'],
+                        imgUrl: articles[index]['urlToImage'],
+                        content: articles[index]['content']));
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
