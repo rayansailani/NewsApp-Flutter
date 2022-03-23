@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         }
       });
     }
+    print(articles);
     setState(() {
       loading = false;
     });
