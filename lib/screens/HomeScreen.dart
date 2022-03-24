@@ -62,9 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
               content:
                   "Julia Fox is doing a moonwalk after she told TMZ her ex, Kanye West, wouldn't hurt a fly.",
               imgUrl:
-                  "https://imagez.tmz.com/image/36/16by9/2022/03/20/360885701cd64de3810dac44768f1cdd_xl.jpg",
-              articleUrl:
-                  "https://imagez.tmz.com/image/36/16by9/2022/03/20/360885701cd64de3810dac44768f1cdd_xl.jpg")
+                  "https://storage.googleapis.com/cms-storage-bucket/ed2e069ee37807f5975a.jpg",
+              articleUrl: "https://flutter.dev/")
         ],
       ),
     );
